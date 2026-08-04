@@ -1,0 +1,38 @@
+
+[
+    {
+        "name": "Apple",
+        "price": 2.99,
+        "image": "Apple",
+        "category": "Fruits",
+        "description": "Fresh red apple"
+    },
+    {
+        "name": "Milk",
+        "price": 4.50,
+        "image": "Milk",
+        "category": "Dairy",
+        "description": "Fresh organic milk"
+    },
+    {
+        "name": "Bread",
+        "price": 3.00,
+        "image": "Bread",
+        "category": "Bakery",
+        "description": "Soft whole wheat bread"
+    },
+    {
+        "name": "Eggs",
+        "price": 2.00,
+        "image": "Eggs",
+        "category": "Dairy",
+        "description": "Fresh farm eggs"
+    },
+    {
+        "name": "Banana",
+        "price": 1.99,
+        "image": "Banana",
+        "category": "Fruits",
+        "description": "Fresh yellow bananas"
+    }
+]
