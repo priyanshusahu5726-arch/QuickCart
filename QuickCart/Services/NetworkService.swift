@@ -8,15 +8,48 @@
 import Foundation
 
 struct NetworkService {
-
+    
+    private let baseURL = "https://dummyjson.com"
+    
     func fetchProducts() async throws -> [Product] {
+        
+        let endpoint = APIEndpoint.products
+        
+        guard let urlrequest = endpoint.urlRequest else {
 
-        guard let url = URL(string: "https://dummyjson.com/products") else {
             throw NetworkError.invalidURL
+
         }
-
-        let (data,response) = try await URLSession.shared.data(from: url)
-
+        
+        let productResponse = try await request(
+            ProductResponse.self,
+            with: urlrequest
+        )
+        
+        return productResponse.products.map { $0.toProduct() }
+        
+    }
+    
+    
+    
+    private func decode<T: Decodable>(
+        _ type: T.Type,
+        from data: Data
+    ) throws -> T {
+        
+        return try JSONDecoder().decode(
+            T.self,
+            from: data
+        )
+        
+    }
+    
+    private func request<T: Decodable>(
+        _ type: T.Type,
+        with request: URLRequest
+    ) async throws -> T {
+        let (data, response) = try await URLSession.shared.data(for: request)
+        
         guard let httpResponse = response as? HTTPURLResponse else {
             throw NetworkError.invalidResponse
         }
@@ -25,13 +58,6 @@ struct NetworkService {
             throw NetworkError.invalidResponse
         }
         
-        do{
-            let productResponse = try JSONDecoder().decode(ProductResponse.self, from: data)
-            
-            return productResponse.products
-        }catch{
-            throw NetworkError.invalidData
-        }
+        return try decode(type, from: data)
     }
-
 }

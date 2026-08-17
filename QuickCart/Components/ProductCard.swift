@@ -12,12 +12,23 @@ struct ProductCard: View {
     var body: some View {
         
         VStack(spacing : 8){
-            
-            Image(product.image)
-                .resizable()
-                .scaledToFit()
-                .frame(height: 80)
-            
+            AsyncImage(url: URL(string: product.image)) { image in
+
+                image
+
+                    .resizable()
+
+                    .scaledToFit()
+
+                    .frame(width: 80, height: 80)
+
+            } placeholder: {
+
+                Color.clear
+
+                    .frame(width: 80, height: 80)
+
+            }
             
             Text(product.name)
                 
@@ -29,13 +40,23 @@ struct ProductCard: View {
 
 #Preview {
     ProductCard(
-        product:  Product(
-            name : "Apple",
-            price: 2.99,
-            image: "Apple",
-            category: "Fruits",
-            description: "Fresh red apple"
-            
+
+            product: Product(
+
+                id: 1,
+
+                name: "Essence Mascara Lash Princess",
+
+                price: 9.99,
+
+                image: "https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/thumbnail.webp",
+
+                category: "beauty",
+
+                description: "The Essence Mascara Lash Princess is a popular mascara..."
+
+            )
+
         )
-    )
-}
+
+    }

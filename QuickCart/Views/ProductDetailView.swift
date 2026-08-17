@@ -13,10 +13,25 @@ struct ProductDetailView: View {
     @Environment(CartManager.self) private var cartManager
     var body: some View {
         VStack(spacing: 20){
-            Image(product.image)
-                .resizable()
+            AsyncImage(url: URL(string: product.image)) { image in
+
+                image
+
+                    .resizable()
+
                     .scaledToFit()
-                    .frame(height: 250)
+
+                    .frame(width: 80, height: 80)
+
+            } placeholder: {
+                
+                Color.clear
+
+                    .frame(width: 80, height: 80)
+
+            }
+                
+       
             
             Text(product.name)
                 .font(.largeTitle)
@@ -54,13 +69,25 @@ struct ProductDetailView: View {
 
 #Preview {
     ProductDetailView(
-        product:  Product(
-            name : "Apple",
-            price : 5.0 ,
-            image: "Apple",
-            category: "Fruits",
-            description: "Fresh red apple"
+
+        product: Product(
+
+            id: 1,
+
+            name: "Essence Mascara Lash Princess",
+
+            price: 9.99,
+
+            image: "https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/thumbnail.webp",
+
+            category: "beauty",
+
+            description: "The Essence Mascara Lash Princess is a popular mascara..."
+
         )
+
     )
+
     .environment(CartManager())
+
 }

@@ -11,6 +11,7 @@ struct HomeView: View {
    
     
     @State private var viewModel = HomeViewModel()
+    @Environment(CartManager.self) private var cartManager
     
     
     
@@ -210,6 +211,13 @@ struct HomeView: View {
             .refreshable {
 
              await   viewModel.loadProducts()
+
+            }
+            .task {
+
+                await viewModel.loadProducts()
+
+                cartManager.restoreCart(using: viewModel.products)
 
             }
         }

@@ -7,8 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		331A3618302E1E51005A7704 /* GenericPractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331A3617302E1E51005A7704 /* GenericPractice.swift */; };
 		333E275D300A7964001B7E54 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333E275C300A7964001B7E54 /* NetworkService.swift */; };
 		334EAE65300805DC00C63B65 /* ProductGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334EAE64300805DC00C63B65 /* ProductGridView.swift */; };
+		33599E7F30286CD000C89BB6 /* PersistedCartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33599E7E30286CD000C89BB6 /* PersistedCartItem.swift */; };
+		33599E8130288D8C00C89BB6 /*  CartPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33599E8030288D8C00C89BB6 /*  CartPersistence.swift */; };
+		335F7D47302B73EC00E90B45 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335F7D46302B73EC00E90B45 /* APIEndpoint.swift */; };
+		335F7D49302B7F7400E90B45 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335F7D48302B7F7400E90B45 /* HTTPMethod.swift */; };
+		3363E1E730273B0500B62D2A /* ProductDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3363E1E630273B0500B62D2A /* ProductDTO.swift */; };
+		3363E1E930273BF700B62D2A /* Product+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3363E1E830273BF700B62D2A /* Product+Mapping.swift */; };
 		338F13942FFD038500118F7C /* CardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338F13932FFD038500118F7C /* CardItem.swift */; };
 		33C063FC30038A70000E4090 /* products.json in Resources */ = {isa = PBXBuildFile; fileRef = 33C063FB30038A6B000E4090 /* products.json */; };
 		33DC60E1300229F5006AB199 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DC60E0300229F5006AB199 /* HomeViewModel.swift */; };
@@ -30,8 +37,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		331A3617302E1E51005A7704 /* GenericPractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericPractice.swift; sourceTree = "<group>"; };
 		333E275C300A7964001B7E54 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		334EAE64300805DC00C63B65 /* ProductGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductGridView.swift; sourceTree = "<group>"; };
+		33599E7E30286CD000C89BB6 /* PersistedCartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistedCartItem.swift; sourceTree = "<group>"; };
+		33599E8030288D8C00C89BB6 /*  CartPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " CartPersistence.swift"; sourceTree = "<group>"; };
+		335F7D46302B73EC00E90B45 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
+		335F7D48302B7F7400E90B45 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		3363E1E630273B0500B62D2A /* ProductDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDTO.swift; sourceTree = "<group>"; };
+		3363E1E830273BF700B62D2A /* Product+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product+Mapping.swift"; sourceTree = "<group>"; };
 		338F13932FFD038500118F7C /* CardItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardItem.swift; sourceTree = "<group>"; };
 		33A827BE2FF663C10065869B /* QuickCart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickCart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33C063FB30038A6B000E4090 /* products.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = products.json; sourceTree = "<group>"; };
@@ -127,6 +141,9 @@
 				33E148532FFCF1520006B1FE /* Product.swift */,
 				338F13932FFD038500118F7C /* CardItem.swift */,
 				33F6F61D300B561300EF1EC5 /* ProductResponse.swift */,
+				3363E1E630273B0500B62D2A /* ProductDTO.swift */,
+				3363E1E830273BF700B62D2A /* Product+Mapping.swift */,
+				33599E7E30286CD000C89BB6 /* PersistedCartItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -143,6 +160,8 @@
 			isa = PBXGroup;
 			children = (
 				333E275C300A7964001B7E54 /* NetworkService.swift */,
+				335F7D46302B73EC00E90B45 /* APIEndpoint.swift */,
+				335F7D48302B7F7400E90B45 /* HTTPMethod.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -183,6 +202,7 @@
 				33E1485E2FFCF1520006B1FE /* ViewsModels */,
 				33E1485F2FFCF1520006B1FE /* Assets.xcassets */,
 				33E148602FFCF1520006B1FE /* QuickCartApp.swift */,
+				331A3617302E1E51005A7704 /* GenericPractice.swift */,
 			);
 			path = QuickCart;
 			sourceTree = "<group>";
@@ -191,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				33E148702FFCF5E50006B1FE /* CartManager.swift */,
+				33599E8030288D8C00C89BB6 /*  CartPersistence.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -270,19 +291,26 @@
 			files = (
 				33E148622FFCF1520006B1FE /* MainTabView.swift in Sources */,
 				33E148712FFCF5E50006B1FE /* CartManager.swift in Sources */,
+				335F7D47302B73EC00E90B45 /* APIEndpoint.swift in Sources */,
 				33E148632FFCF1520006B1FE /* Category.swift in Sources */,
 				338F13942FFD038500118F7C /* CardItem.swift in Sources */,
+				3363E1E930273BF700B62D2A /* Product+Mapping.swift in Sources */,
 				33E148642FFCF1520006B1FE /* ProductDetailView.swift in Sources */,
 				33E148652FFCF1520006B1FE /* ProfileView.swift in Sources */,
 				33E148662FFCF1520006B1FE /* HomeView.swift in Sources */,
 				334EAE65300805DC00C63B65 /* ProductGridView.swift in Sources */,
 				33E148672FFCF1520006B1FE /* ProductCard.swift in Sources */,
+				3363E1E730273B0500B62D2A /* ProductDTO.swift in Sources */,
 				33E148682FFCF1520006B1FE /* SearchView.swift in Sources */,
 				333E275D300A7964001B7E54 /* NetworkService.swift in Sources */,
 				33F6F61E300B561300EF1EC5 /* ProductResponse.swift in Sources */,
+				33599E7F30286CD000C89BB6 /* PersistedCartItem.swift in Sources */,
+				331A3618302E1E51005A7704 /* GenericPractice.swift in Sources */,
 				33DC60E1300229F5006AB199 /* HomeViewModel.swift in Sources */,
+				33599E8130288D8C00C89BB6 /*  CartPersistence.swift in Sources */,
 				33E148692FFCF1520006B1FE /* CartView.swift in Sources */,
 				33E1486A2FFCF1520006B1FE /* QuickCartApp.swift in Sources */,
+				335F7D49302B7F7400E90B45 /* HTTPMethod.swift in Sources */,
 				33E3920E300E3C1B005A3DC4 /* NetworkError.swift in Sources */,
 				33E1486B2FFCF1520006B1FE /* Product.swift in Sources */,
 				33E1486C2FFCF1520006B1FE /* CategoryCard.swift in Sources */,

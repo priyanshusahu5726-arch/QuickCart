@@ -8,7 +8,7 @@
 import Foundation
 struct ProductResponse: Decodable {
 
-    let products: [Product]
+    let products: [ProductDTO]
 
 }
 

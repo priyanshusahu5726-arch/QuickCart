@@ -49,11 +49,7 @@ class HomeViewModel {
     
     var selectedSortOption: SortOption = .name
     
-    init() {
-        Task{
-          await  loadProducts()
-        }
-    }
+
     
     var filteredProducts: [Product] {
 
