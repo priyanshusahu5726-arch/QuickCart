@@ -33,6 +33,7 @@
 		33E1486D2FFCF1520006B1FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33E1485F2FFCF1520006B1FE /* Assets.xcassets */; };
 		33E148712FFCF5E50006B1FE /* CartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E148702FFCF5E50006B1FE /* CartManager.swift */; };
 		33E3920E300E3C1B005A3DC4 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E3920D300E3C1B005A3DC4 /* NetworkError.swift */; };
+		33E57B93303324EA0075F1D8 /* ProductListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E57B92303324EA0075F1D8 /* ProductListViewModel.swift */; };
 		33F6F61E300B561300EF1EC5 /* ProductResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6F61D300B561300EF1EC5 /* ProductResponse.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 		33E148602FFCF1520006B1FE /* QuickCartApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickCartApp.swift; sourceTree = "<group>"; };
 		33E148702FFCF5E50006B1FE /* CartManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartManager.swift; sourceTree = "<group>"; };
 		33E3920D300E3C1B005A3DC4 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		33E57B92303324EA0075F1D8 /* ProductListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewModel.swift; sourceTree = "<group>"; };
 		33F6F61D300B561300EF1EC5 /* ProductResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				33DC60E0300229F5006AB199 /* HomeViewModel.swift */,
+				33E57B92303324EA0075F1D8 /* ProductListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -179,13 +182,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		33E1485E2FFCF1520006B1FE /* ViewsModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewsModels;
-			sourceTree = "<group>";
-		};
 		33E148612FFCF1520006B1FE /* QuickCart */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,7 +195,6 @@
 				33E148552FFCF1520006B1FE /* Resources */,
 				33E148562FFCF1520006B1FE /* Services */,
 				33E1485D2FFCF1520006B1FE /* Views */,
-				33E1485E2FFCF1520006B1FE /* ViewsModels */,
 				33E1485F2FFCF1520006B1FE /* Assets.xcassets */,
 				33E148602FFCF1520006B1FE /* QuickCartApp.swift */,
 				331A3617302E1E51005A7704 /* GenericPractice.swift */,
@@ -309,6 +304,7 @@
 				33DC60E1300229F5006AB199 /* HomeViewModel.swift in Sources */,
 				33599E8130288D8C00C89BB6 /*  CartPersistence.swift in Sources */,
 				33E148692FFCF1520006B1FE /* CartView.swift in Sources */,
+				33E57B93303324EA0075F1D8 /* ProductListViewModel.swift in Sources */,
 				33E1486A2FFCF1520006B1FE /* QuickCartApp.swift in Sources */,
 				335F7D49302B7F7400E90B45 /* HTTPMethod.swift in Sources */,
 				33E3920E300E3C1B005A3DC4 /* NetworkError.swift in Sources */,
