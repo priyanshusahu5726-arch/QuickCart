@@ -129,6 +129,15 @@ Building QuickCart helped me gain practical experience with:
 - Xcode 16 or later
 - iOS 18 Simulator
 - macOS Sequoia or later
+  ## 📱 Screenshots
+
+| Home | Cart |
+|------|------|
+| ![](images/home.png) | ![](images/cart.png) |
+
+| Search | Product Details |
+|---------|-----------------|
+| ![](images/search.png) | ![](images/ProductDetail.png) |
 
 ### Installation
 
