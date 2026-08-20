@@ -16,6 +16,9 @@
 		335F7D49302B7F7400E90B45 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335F7D48302B7F7400E90B45 /* HTTPMethod.swift */; };
 		3363E1E730273B0500B62D2A /* ProductDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3363E1E630273B0500B62D2A /* ProductDTO.swift */; };
 		3363E1E930273BF700B62D2A /* Product+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3363E1E830273BF700B62D2A /* Product+Mapping.swift */; };
+		33827CF83036FD0400F05C8E /* ProductRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33827CF73036FD0400F05C8E /* ProductRepository.swift */; };
+		33827CFA3036FD3000F05C8E /* ProductRepositoryProtocole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33827CF93036FD3000F05C8E /* ProductRepositoryProtocole.swift */; };
+		33827CFD3037208000F05C8E /* MockProductRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33827CFC3037208000F05C8E /* MockProductRepository.swift */; };
 		338F13942FFD038500118F7C /* CardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338F13932FFD038500118F7C /* CardItem.swift */; };
 		33C063FC30038A70000E4090 /* products.json in Resources */ = {isa = PBXBuildFile; fileRef = 33C063FB30038A6B000E4090 /* products.json */; };
 		33DC60E1300229F5006AB199 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DC60E0300229F5006AB199 /* HomeViewModel.swift */; };
@@ -47,6 +50,9 @@
 		335F7D48302B7F7400E90B45 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		3363E1E630273B0500B62D2A /* ProductDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDTO.swift; sourceTree = "<group>"; };
 		3363E1E830273BF700B62D2A /* Product+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product+Mapping.swift"; sourceTree = "<group>"; };
+		33827CF73036FD0400F05C8E /* ProductRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRepository.swift; sourceTree = "<group>"; };
+		33827CF93036FD3000F05C8E /* ProductRepositoryProtocole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRepositoryProtocole.swift; sourceTree = "<group>"; };
+		33827CFC3037208000F05C8E /* MockProductRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockProductRepository.swift; sourceTree = "<group>"; };
 		338F13932FFD038500118F7C /* CardItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardItem.swift; sourceTree = "<group>"; };
 		33A827BE2FF663C10065869B /* QuickCart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickCart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33C063FB30038A6B000E4090 /* products.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = products.json; sourceTree = "<group>"; };
@@ -80,6 +86,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		33827CF33036FC3500F05C8E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				33827CF93036FD3000F05C8E /* ProductRepositoryProtocole.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		33827CF43036FC5D00F05C8E /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				33827CF73036FD0400F05C8E /* ProductRepository.swift */,
+				33827CFC3037208000F05C8E /* MockProductRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
 		33A827B52FF663C10065869B = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +208,8 @@
 		33E148612FFCF1520006B1FE /* QuickCart */ = {
 			isa = PBXGroup;
 			children = (
+				33827CF43036FC5D00F05C8E /* Repositories */,
+				33827CF33036FC3500F05C8E /* Protocols */,
 				33DC60DD3002290E006AB199 /* ViewModels */,
 				33E1486E2FFCF55E0006B1FE /* Manager */,
 				33E1484C2FFCF1520006B1FE /* App */,
@@ -286,6 +311,9 @@
 			files = (
 				33E148622FFCF1520006B1FE /* MainTabView.swift in Sources */,
 				33E148712FFCF5E50006B1FE /* CartManager.swift in Sources */,
+				33827CFA3036FD3000F05C8E /* ProductRepositoryProtocole.swift in Sources */,
+				33827CFD3037208000F05C8E /* MockProductRepository.swift in Sources */,
+				33827CF83036FD0400F05C8E /* ProductRepository.swift in Sources */,
 				335F7D47302B73EC00E90B45 /* APIEndpoint.swift in Sources */,
 				33E148632FFCF1520006B1FE /* Category.swift in Sources */,
 				338F13942FFD038500118F7C /* CardItem.swift in Sources */,

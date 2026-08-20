@@ -10,7 +10,8 @@ import SwiftUI
 struct HomeView: View {
    
     
-    @State private var viewModel = HomeViewModel()
+    @State private var viewModel = HomeViewModel(repository: ProductRepository())
+    
     @Environment(CartManager.self) private var cartManager
     
     

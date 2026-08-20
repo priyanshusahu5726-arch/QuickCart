@@ -21,7 +21,13 @@ enum SortOption {
 @Observable
 
 class HomeViewModel {
-    private let networkService = NetworkService()
+    private let repository: ProductRepositoryProtocol
+    
+    init(repository: ProductRepositoryProtocol) {
+
+        self.repository = repository
+
+    }
 
     let categories = [
 
@@ -142,7 +148,7 @@ class HomeViewModel {
 
             do {
 
-                products = try await networkService.fetchProducts()
+                products = try await repository.fetchProducts()
                
             } catch {
                 isLoading = false
