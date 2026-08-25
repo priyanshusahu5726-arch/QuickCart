@@ -8,9 +8,12 @@
 import Foundation
 
 struct CartItem: Identifiable {
+    
+    var id: Int {
 
-    let id = UUID()
+        product.id
 
+    }
     let product: Product
 
     var quantity: Int
