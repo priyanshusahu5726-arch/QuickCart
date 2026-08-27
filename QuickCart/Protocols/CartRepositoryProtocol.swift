@@ -7,5 +7,19 @@
 
 import Foundation
 protocol CartRepositoryProtocol {
+    
+    func fetchCartItems() -> [CartItem]
 
+        func add(_ product: Product)
+
+        func remove(_ product: Product)
+
+        func increaseQuantity(for product: Product)
+
+        func decreaseQuantity(for product: Product)
+
+        func clearCart()
+
+        func totalPrice() -> Double
+       
 }
