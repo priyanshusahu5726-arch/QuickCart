@@ -10,6 +10,7 @@
 		331A3618302E1E51005A7704 /* GenericPractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331A3617302E1E51005A7704 /* GenericPractice.swift */; };
 		333E275D300A7964001B7E54 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333E275C300A7964001B7E54 /* NetworkService.swift */; };
 		334EAE65300805DC00C63B65 /* ProductGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334EAE64300805DC00C63B65 /* ProductGridView.swift */; };
+		335088153040C9B400B05417 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335088143040C9A000B05417 /* CartViewModel.swift */; };
 		33599E7F30286CD000C89BB6 /* PersistedCartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33599E7E30286CD000C89BB6 /* PersistedCartItem.swift */; };
 		33599E8130288D8C00C89BB6 /*  CartPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33599E8030288D8C00C89BB6 /*  CartPersistence.swift */; };
 		335F7D47302B73EC00E90B45 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335F7D46302B73EC00E90B45 /* APIEndpoint.swift */; };
@@ -46,6 +47,7 @@
 		331A3617302E1E51005A7704 /* GenericPractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericPractice.swift; sourceTree = "<group>"; };
 		333E275C300A7964001B7E54 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		334EAE64300805DC00C63B65 /* ProductGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductGridView.swift; sourceTree = "<group>"; };
+		335088143040C9A000B05417 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
 		33599E7E30286CD000C89BB6 /* PersistedCartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistedCartItem.swift; sourceTree = "<group>"; };
 		33599E8030288D8C00C89BB6 /*  CartPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " CartPersistence.swift"; sourceTree = "<group>"; };
 		335F7D46302B73EC00E90B45 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 		33DC60DD3002290E006AB199 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				335088143040C9A000B05417 /* CartViewModel.swift */,
 				33DC60E0300229F5006AB199 /* HomeViewModel.swift */,
 				33E57B92303324EA0075F1D8 /* ProductListViewModel.swift */,
 			);
@@ -319,6 +322,7 @@
 				33E148712FFCF5E50006B1FE /* CartManager.swift in Sources */,
 				33827CFA3036FD3000F05C8E /* ProductRepositoryProtocole.swift in Sources */,
 				33827CFD3037208000F05C8E /* MockProductRepository.swift in Sources */,
+				335088153040C9B400B05417 /* CartViewModel.swift in Sources */,
 				33827CF83036FD0400F05C8E /* ProductRepository.swift in Sources */,
 				335F7D47302B73EC00E90B45 /* APIEndpoint.swift in Sources */,
 				33E148632FFCF1520006B1FE /* Category.swift in Sources */,

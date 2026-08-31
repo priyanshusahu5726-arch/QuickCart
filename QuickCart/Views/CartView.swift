@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct CartView: View {
-    @Environment(CartManager.self) private var cartManager
+    @State private var viewModel = CartViewModel(
+        repository: CartRepository()
+    )
     @State private var showCheckoutAlert = false
     var body: some View {
         
@@ -16,7 +18,7 @@ struct CartView: View {
             VStack{
                 
                 
-                if cartManager.items.isEmpty {
+                if viewModel.items.isEmpty {
 
                     VStack(spacing: 20) {
 
@@ -46,7 +48,7 @@ struct CartView: View {
                     List{
                         Section("Items"){
                             
-                            ForEach(cartManager.items, id: \.id) { item in
+                            ForEach(viewModel.items, id: \.id) { item in
                                 
                                 HStack{
                                     Image(systemName: item.product.image)
@@ -57,21 +59,21 @@ struct CartView: View {
                                         
                                         HStack{
                                             Button("-"){
-                                                cartManager.decreaseQuantity(for: item)
+                                                viewModel.decreaseQuantity(for: item.product)
                                             }
                                             .buttonStyle(.borderless)
                                             Text("Qty: \(item.quantity)")
                                                 .frame(minWidth: 30)
                                             
                                             Button("+"){
-                                                cartManager.increaseQuantity(for: item)
+                                                viewModel.increaseQuantity(for: item.product)
                                             }
                                             .buttonStyle(.borderless)
                                         }
                                         
                                         
                                         Button("Remove"){
-                                            cartManager.removeItem(item)
+                                            viewModel.remove(item.product)
                                         }
                                         .buttonStyle(.borderless)
                                         .foregroundStyle(.red)
@@ -87,7 +89,7 @@ struct CartView: View {
                     HStack{
                         Text("Total:")
                         Spacer()
-                        Text("$ \(cartManager.totalPrice, specifier: "%.2f")")
+                        Text("$ \(viewModel.totalPrice, specifier: "%.2f")")
                             .fontWeight(.bold)
                     }
                 }
@@ -111,10 +113,16 @@ struct CartView: View {
             .navigationTitle("Cart")
             
         }
+        .onAppear {
+
+            viewModel.loadCartItems()
+
+        }
+        
     }
 }
 
 #Preview {
     CartView()
-        .environment(CartManager())
+        
 }
