@@ -9,11 +9,23 @@ import SwiftUI
 
 @main
 struct QuickCartApp: App {
-    let cartManager = CartManager()
+    
+    let cartRepository: CartRepository
+    let cartViewModel: CartViewModel
+    
+    init() {
+
+        cartRepository = CartRepository()
+
+        cartViewModel = CartViewModel(repository: cartRepository)
+
+    }
+    
     var body: some Scene {
         WindowGroup {
-           MainTabView()
-                .environment(cartManager)
+           MainTabView(
+            cartViewModel: cartViewModel
+           )
         }
     }
 }

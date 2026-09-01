@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ProductGridView: View {
     let products: [Product]
+    let cartViewModel: CartViewModel
 
         let columns = [
 
@@ -25,7 +26,8 @@ struct ProductGridView: View {
 
                 NavigationLink {
 
-                    ProductDetailView(product: currentProduct)
+                    ProductDetailView(product: currentProduct,
+                                      cartViewModel: cartViewModel)
 
                 } label: {
 
@@ -40,5 +42,8 @@ struct ProductGridView: View {
 }
 
 #Preview {
-    ProductGridView(products: [])
+    ProductGridView(products: [],
+    cartViewModel: CartViewModel(
+        repository: CartRepository()
+    ))
 }

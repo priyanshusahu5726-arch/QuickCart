@@ -71,4 +71,11 @@ final class CartViewModel {
       repository.totalPrice()
         
     }
+    
+    // restore the save cart
+    func restoreCart(using products: [Product]) {
+        repository.restoreCart(using: products)
+        loadCartItems()
+        
+    }
 }

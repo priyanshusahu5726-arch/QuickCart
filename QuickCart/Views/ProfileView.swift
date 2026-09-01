@@ -15,5 +15,5 @@ struct ProfileView: View {
 
 #Preview {
     ProfileView()
-        .environment(CartManager())
+        
 }

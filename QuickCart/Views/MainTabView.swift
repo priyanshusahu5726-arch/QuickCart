@@ -9,10 +9,15 @@ import SwiftUI
 
 struct MainTabView: View {
     @State private var selectedTab = 0
+    
+    let cartViewModel: CartViewModel
+
     var body: some View {
         
         TabView(selection: $selectedTab){
-            HomeView()
+            HomeView(
+                cartViewModel: cartViewModel
+            )
                 .tabItem{
                     Label("Home", systemImage: "house")
                 }
@@ -22,7 +27,7 @@ struct MainTabView: View {
                     Label("Search", systemImage: "magnifyingglass")
                 }
                 .tag(1)
-            CartView()
+            CartView(viewModel: cartViewModel)
                 .tabItem{
                     Label("cart", systemImage: "cart")
                 }
@@ -37,6 +42,10 @@ struct MainTabView: View {
 }
 
 #Preview {
-    MainTabView()
-        .environment(CartManager())
+    MainTabView(
+        cartViewModel: CartViewModel(
+            repository: CartRepository()
+        )
+    )
+       
 }

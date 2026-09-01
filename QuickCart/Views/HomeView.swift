@@ -12,7 +12,7 @@ struct HomeView: View {
     
     @State private var viewModel = HomeViewModel(repository: ProductRepository())
     
-    @Environment(CartManager.self) private var cartManager
+    let cartViewModel: CartViewModel
     
     
     
@@ -202,7 +202,8 @@ struct HomeView: View {
                             .frame(maxWidth: .infinity)
 
                         } else {
-                            ProductGridView(products: viewModel.filteredProducts)
+                            ProductGridView(products: viewModel.filteredProducts,
+                                            cartViewModel: cartViewModel)
                         }
                     }
                     .padding(.horizontal)
@@ -218,13 +219,16 @@ struct HomeView: View {
 
                 await viewModel.loadProducts()
 
-                cartManager.restoreCart(using: viewModel.products)
+                cartViewModel.restoreCart(using: viewModel.products)
 
             }
         }
     }
 }
 #Preview {
-    HomeView()
-        .environment(CartManager())
+    HomeView(
+        cartViewModel: CartViewModel(
+            repository: CartRepository()
+        )
+    )
 }

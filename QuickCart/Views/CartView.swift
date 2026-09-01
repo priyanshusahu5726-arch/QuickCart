@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct CartView: View {
-    @State private var viewModel = CartViewModel(
-        repository: CartRepository()
-    )
+   let viewModel: CartViewModel
     @State private var showCheckoutAlert = false
     var body: some View {
         
@@ -123,6 +121,9 @@ struct CartView: View {
 }
 
 #Preview {
-    CartView()
-        
+    CartView(
+        viewModel: CartViewModel(
+            repository: CartRepository()
+        )
+    )
 }

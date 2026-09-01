@@ -10,7 +10,7 @@ import SwiftUI
 struct ProductDetailView: View {
     let product : Product
     @State private var quantity = 1
-    @Environment(CartManager.self) private var cartManager
+    let cartViewModel : CartViewModel
     var body: some View {
         VStack(spacing: 20){
             AsyncImage(url: URL(string: product.image)) { image in
@@ -52,12 +52,14 @@ struct ProductDetailView: View {
                   quantity += 1
                 }
             }
-            Button("Add to cart"){
-                cartManager.addItem(
-                    product: product,
-                    quantity: quantity
-                    )
-               
+            Button("Add to cart") {
+
+                for _ in 0..<quantity {
+
+                    cartViewModel.add(product)
+
+                }
+
             }
             .buttonStyle(.borderedProminent)
             Spacer()
@@ -84,10 +86,13 @@ struct ProductDetailView: View {
 
             description: "The Essence Mascara Lash Princess is a popular mascara..."
 
+        ),
+        cartViewModel: CartViewModel(
+            
+            repository: CartRepository()
+
         )
 
     )
-
-    .environment(CartManager())
 
 }

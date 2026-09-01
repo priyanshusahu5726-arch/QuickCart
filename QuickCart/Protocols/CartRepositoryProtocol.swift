@@ -9,6 +9,7 @@ import Foundation
 protocol CartRepositoryProtocol {
     
     func fetchCartItems() -> [CartItem]
+    
 
         func add(_ product: Product)
 
@@ -21,5 +22,7 @@ protocol CartRepositoryProtocol {
         func clearCart()
 
         func totalPrice() -> Double
+    
+        func restoreCart(using products: [Product])
        
 }
