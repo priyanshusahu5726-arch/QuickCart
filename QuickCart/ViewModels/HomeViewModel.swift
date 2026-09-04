@@ -113,33 +113,6 @@ class HomeViewModel {
 
     }
     
-    /* private func loadProducts() {
-
-        guard let url = Bundle.main.url(
-
-            forResource: "products",
-
-            withExtension: "json"
-
-        ) else {
-
-            return
-
-        }
-        do {
-            let data = try Data(contentsOf: url)
-            let decodedProducts = try JSONDecoder().decode(
-                [Product].self,
-                from: data
-            )
-            products = decodedProducts
-
-        }catch {
-
-            print("Error loading products:", error)
-
-        }
-    }*/
     func loadProducts() async {
 
         

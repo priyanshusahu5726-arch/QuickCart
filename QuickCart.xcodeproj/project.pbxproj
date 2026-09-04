@@ -42,6 +42,23 @@
 		33F6F61E300B561300EF1EC5 /* ProductResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6F61D300B561300EF1EC5 /* ProductResponse.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		3359D3BC304808E600D0EBCB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33A827B62FF663C10065869B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 33A827BD2FF663C10065869B;
+			remoteInfo = QuickCart;
+		};
+		3359D3CB3048094000D0EBCB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33A827B62FF663C10065869B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 33A827BD2FF663C10065869B;
+			remoteInfo = QuickCart;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		331A3617302E1E51005A7704 /* GenericPractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericPractice.swift; sourceTree = "<group>"; };
 		333E275C300A7964001B7E54 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -49,6 +66,8 @@
 		335088143040C9A000B05417 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
 		33599E7E30286CD000C89BB6 /* PersistedCartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistedCartItem.swift; sourceTree = "<group>"; };
 		33599E8030288D8C00C89BB6 /*  CartPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " CartPersistence.swift"; sourceTree = "<group>"; };
+		3359D3B8304808E600D0EBCB /* QuickCartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuickCartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3359D3C53048094000D0EBCB /* QuickCartUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuickCartUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		335F7D46302B73EC00E90B45 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
 		335F7D48302B7F7400E90B45 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		3363E1E630273B0500B62D2A /* ProductDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDTO.swift; sourceTree = "<group>"; };
@@ -79,7 +98,34 @@
 		33F6F61D300B561300EF1EC5 /* ProductResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		3359D3B9304808E600D0EBCB /* QuickCartTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = QuickCartTests;
+			sourceTree = "<group>";
+		};
+		3359D3C63048094000D0EBCB /* QuickCartUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = QuickCartUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
+		3359D3B5304808E600D0EBCB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3359D3C23048094000D0EBCB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		33A827BB2FF663C10065869B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -113,6 +159,8 @@
 			isa = PBXGroup;
 			children = (
 				33E148612FFCF1520006B1FE /* QuickCart */,
+				3359D3B9304808E600D0EBCB /* QuickCartTests */,
+				3359D3C63048094000D0EBCB /* QuickCartUITests */,
 				33A827BF2FF663C10065869B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -121,6 +169,8 @@
 			isa = PBXGroup;
 			children = (
 				33A827BE2FF663C10065869B /* QuickCart.app */,
+				3359D3B8304808E600D0EBCB /* QuickCartTests.xctest */,
+				3359D3C53048094000D0EBCB /* QuickCartUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -218,7 +268,7 @@
 				33827CF43036FC5D00F05C8E /* Repositories */,
 				33827CF33036FC3500F05C8E /* Protocols */,
 				33DC60DD3002290E006AB199 /* ViewModels */,
-				33E1486E2FFCF55E0006B1FE /* Manager */,
+				33E1486E2FFCF55E0006B1FE /* Persistence */,
 				33E1484C2FFCF1520006B1FE /* App */,
 				33E1484F2FFCF1520006B1FE /* Components */,
 				33E148502FFCF1520006B1FE /* Extensions */,
@@ -234,17 +284,63 @@
 			path = QuickCart;
 			sourceTree = "<group>";
 		};
-		33E1486E2FFCF55E0006B1FE /* Manager */ = {
+		33E1486E2FFCF55E0006B1FE /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
 				33599E8030288D8C00C89BB6 /*  CartPersistence.swift */,
 			);
-			path = Manager;
+			path = Persistence;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		3359D3B7304808E600D0EBCB /* QuickCartTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3359D3C0304808E600D0EBCB /* Build configuration list for PBXNativeTarget "QuickCartTests" */;
+			buildPhases = (
+				3359D3B4304808E600D0EBCB /* Sources */,
+				3359D3B5304808E600D0EBCB /* Frameworks */,
+				3359D3B6304808E600D0EBCB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3359D3BD304808E600D0EBCB /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				3359D3B9304808E600D0EBCB /* QuickCartTests */,
+			);
+			name = QuickCartTests;
+			packageProductDependencies = (
+			);
+			productName = QuickCartTests;
+			productReference = 3359D3B8304808E600D0EBCB /* QuickCartTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3359D3C43048094000D0EBCB /* QuickCartUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3359D3CD3048094000D0EBCB /* Build configuration list for PBXNativeTarget "QuickCartUITests" */;
+			buildPhases = (
+				3359D3C13048094000D0EBCB /* Sources */,
+				3359D3C23048094000D0EBCB /* Frameworks */,
+				3359D3C33048094000D0EBCB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3359D3CC3048094000D0EBCB /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				3359D3C63048094000D0EBCB /* QuickCartUITests */,
+			);
+			name = QuickCartUITests;
+			packageProductDependencies = (
+			);
+			productName = QuickCartUITests;
+			productReference = 3359D3C53048094000D0EBCB /* QuickCartUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		33A827BD2FF663C10065869B /* QuickCart */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 33A827C92FF663C20065869B /* Build configuration list for PBXNativeTarget "QuickCart" */;
@@ -274,6 +370,14 @@
 				LastSwiftUpdateCheck = 2660;
 				LastUpgradeCheck = 2660;
 				TargetAttributes = {
+					3359D3B7304808E600D0EBCB = {
+						CreatedOnToolsVersion = 26.6;
+						TestTargetID = 33A827BD2FF663C10065869B;
+					};
+					3359D3C43048094000D0EBCB = {
+						CreatedOnToolsVersion = 26.6;
+						TestTargetID = 33A827BD2FF663C10065869B;
+					};
 					33A827BD2FF663C10065869B = {
 						CreatedOnToolsVersion = 26.6;
 					};
@@ -294,11 +398,27 @@
 			projectRoot = "";
 			targets = (
 				33A827BD2FF663C10065869B /* QuickCart */,
+				3359D3B7304808E600D0EBCB /* QuickCartTests */,
+				3359D3C43048094000D0EBCB /* QuickCartUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3359D3B6304808E600D0EBCB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3359D3C33048094000D0EBCB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		33A827BC2FF663C10065869B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -311,6 +431,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3359D3B4304808E600D0EBCB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3359D3C13048094000D0EBCB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		33A827BA2FF663C10065869B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -351,7 +485,98 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		3359D3BD304808E600D0EBCB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 33A827BD2FF663C10065869B /* QuickCart */;
+			targetProxy = 3359D3BC304808E600D0EBCB /* PBXContainerItemProxy */;
+		};
+		3359D3CC3048094000D0EBCB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 33A827BD2FF663C10065869B /* QuickCart */;
+			targetProxy = 3359D3CB3048094000D0EBCB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		3359D3BE304808E600D0EBCB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.priyanshu.QuickCartTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QuickCart.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/QuickCart";
+			};
+			name = Debug;
+		};
+		3359D3BF304808E600D0EBCB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.priyanshu.QuickCartTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QuickCart.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/QuickCart";
+			};
+			name = Release;
+		};
+		3359D3CE3048094000D0EBCB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.priyanshu.QuickCartUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = QuickCart;
+			};
+			name = Debug;
+		};
+		3359D3CF3048094000D0EBCB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.priyanshu.QuickCartUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = QuickCart;
+			};
+			name = Release;
+		};
 		33A827C72FF663C20065869B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -536,6 +761,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3359D3C0304808E600D0EBCB /* Build configuration list for PBXNativeTarget "QuickCartTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3359D3BE304808E600D0EBCB /* Debug */,
+				3359D3BF304808E600D0EBCB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3359D3CD3048094000D0EBCB /* Build configuration list for PBXNativeTarget "QuickCartUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3359D3CE3048094000D0EBCB /* Debug */,
+				3359D3CF3048094000D0EBCB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		33A827B92FF663C10065869B /* Build configuration list for PBXProject "QuickCart" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

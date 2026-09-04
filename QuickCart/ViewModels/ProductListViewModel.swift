@@ -19,12 +19,16 @@ final class ProductListViewModel: ObservableObject {
     @Published
     var error: Error?
     
-    private let networkService: NetworkService
+    private let repository: ProductRepositoryProtocol
     
     init(
-        networkService: NetworkService = NetworkService()
+
+        repository: ProductRepositoryProtocol = ProductRepository()
+
     ) {
-        self.networkService = networkService
+
+        self.repository = repository
+
     }
     
     func fetchProducts() async {
@@ -39,7 +43,7 @@ final class ProductListViewModel: ObservableObject {
 
         do {
 
-            products = try await networkService.fetchProducts()
+            products = try await repository.fetchProducts()
 
         } catch {
             self.error = error
