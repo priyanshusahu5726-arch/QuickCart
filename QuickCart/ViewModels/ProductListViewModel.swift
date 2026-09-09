@@ -19,15 +19,15 @@ final class ProductListViewModel: ObservableObject {
     @Published
     var error: Error?
     
-    private let repository: ProductRepositoryProtocol
+    private let getProductsUseCase: GetProductsUseCaseProtocol
     
     init(
 
-        repository: ProductRepositoryProtocol = ProductRepository()
+        getProductsUseCase: GetProductsUseCaseProtocol = GetProductsUseCase()
 
     ) {
 
-        self.repository = repository
+        self.getProductsUseCase = getProductsUseCase
 
     }
     
@@ -43,7 +43,7 @@ final class ProductListViewModel: ObservableObject {
 
         do {
 
-            products = try await repository.fetchProducts()
+            products = try await getProductsUseCase.execute()
 
         } catch {
             self.error = error

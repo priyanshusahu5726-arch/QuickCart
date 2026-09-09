@@ -14,8 +14,8 @@ final class ProductListViewModelTests: XCTestCase {
     func testFetchProductsLoadsProductsSuccessfully() async throws {
 
         // Arrange
-        let repository = MockProductRepository()
-        let viewModel = ProductListViewModel(repository: repository)
+        let repository = MockGetProductsUseCase()
+        let viewModel = ProductListViewModel(getProductsUseCase:  repository)
 
         // Act
         await viewModel.fetchProducts()
@@ -24,14 +24,15 @@ final class ProductListViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.products.count, 1)
         XCTAssertEqual(viewModel.products.first?.name, "Mock Apple")
     }
-    @MainActor
+    
+  @MainActor
     func testLoadingStateChanges() async {
             
         // Arrange
 
-           let repository = DelayedMockProductRepository()
+           let repository = DelayedMockGetProductsUseCase()
 
-           let viewModel = ProductListViewModel(repository: repository)
+           let viewModel = ProductListViewModel(getProductsUseCase:  repository)
         
         // Act
            let task = Task {
@@ -46,6 +47,7 @@ final class ProductListViewModelTests: XCTestCase {
             await task.value
         
         XCTAssertFalse(viewModel.isLoading)
+        XCTAssertEqual(viewModel.products.count, 1)
     }
     
     
@@ -53,9 +55,9 @@ final class ProductListViewModelTests: XCTestCase {
     func testFetchProductsSetsErrorWhenRepositoryThrows() async {
         
         //Arrange
-        let repository = ThrowingMockProductRepository()
+        let repository = ThrowingMockGetProductsUseCase()
 
-        let viewModel = ProductListViewModel(repository: repository)
+        let viewModel = ProductListViewModel(getProductsUseCase:  repository)
         
         // Act
 
@@ -63,7 +65,7 @@ final class ProductListViewModelTests: XCTestCase {
         
         //Assert
         XCTAssertNotNil(viewModel.error)
-        
+        XCTAssertFalse(viewModel.isLoading)
         XCTAssertTrue(viewModel.products.isEmpty)
     }
 }
