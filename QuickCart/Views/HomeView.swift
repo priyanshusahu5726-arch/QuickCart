@@ -8,13 +8,10 @@
 import SwiftUI
 
 struct HomeView: View {
-   
-    
-    @State private var viewModel = HomeViewModel(repository: ProductRepository())
     
     let cartViewModel: CartViewModel
     
-    
+    @Bindable  var viewModel: HomeViewModel
     
     let columns = [
         GridItem(.flexible()),
@@ -229,6 +226,8 @@ struct HomeView: View {
     HomeView(
         cartViewModel: CartViewModel(
             repository: CartRepository()
-        )
+        ),
+        viewModel: HomeViewModel(getProductsUseCase: GetProductsUseCase (repository: ProductRepository())
     )
+        )
 }

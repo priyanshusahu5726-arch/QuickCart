@@ -21,11 +21,11 @@ enum SortOption {
 @Observable
 
 class HomeViewModel {
-    private let repository: ProductRepositoryProtocol
+    private let getProductsUseCase: GetProductsUseCaseProtocol
     
-    init(repository: ProductRepositoryProtocol) {
+    init(getProductsUseCase: GetProductsUseCaseProtocol) {
 
-        self.repository = repository
+        self.getProductsUseCase = getProductsUseCase
 
     }
 
@@ -121,7 +121,7 @@ class HomeViewModel {
 
             do {
 
-                products = try await repository.fetchProducts()
+                products = try await getProductsUseCase.execute()
                
             } catch {
                 isLoading = false

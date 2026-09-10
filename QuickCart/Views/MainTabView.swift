@@ -11,12 +11,16 @@ struct MainTabView: View {
     @State private var selectedTab = 0
     
     let cartViewModel: CartViewModel
+    
+    let homeViewModel: HomeViewModel
+    
 
     var body: some View {
         
         TabView(selection: $selectedTab){
             HomeView(
-                cartViewModel: cartViewModel
+                cartViewModel: cartViewModel, 
+                viewModel : homeViewModel
             )
                 .tabItem{
                     Label("Home", systemImage: "house")
@@ -45,7 +49,10 @@ struct MainTabView: View {
     MainTabView(
         cartViewModel: CartViewModel(
             repository: CartRepository()
-        )
+        ),
+        homeViewModel: HomeViewModel(getProductsUseCase: GetProductsUseCase(repository: ProductRepository()
+      )
+     )
     )
        
 }
