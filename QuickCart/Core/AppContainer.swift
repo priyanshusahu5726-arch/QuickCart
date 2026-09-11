@@ -8,19 +8,20 @@
 import Foundation
 final class AppContainer{
     
+    private let productRepository = ProductRepository()
+    
+    private let cartRepository = CartRepository()
+    
     func makeHomeViewModel() -> HomeViewModel {
 
-        let repository = ProductRepository()
-
-        let useCase = GetProductsUseCase(repository: repository)
+        let useCase = GetProductsUseCase(repository: productRepository)
 
         return HomeViewModel(getProductsUseCase: useCase)
 
     }
     
     func makeCartViewModel() ->CartViewModel{
-        let cartRepository = CartRepository()
-        
+    
         return CartViewModel(repository :  cartRepository)
     }
 }

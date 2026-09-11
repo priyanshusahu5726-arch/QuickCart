@@ -1,5 +1,5 @@
 //
-//  ProductLIstViewModelTests.swift
+//  HomeViewModelTests.swift
 //  QuickCartTests
 //
 //  Created by priyanshu sahu on 02/09/26.
@@ -7,36 +7,36 @@
 
 import XCTest
 @testable import QuickCart
+@MainActor
+final class HomeViewModelTests: XCTestCase {
 
-final class ProductListViewModelTests: XCTestCase {
-
-    @MainActor
-    func testFetchProductsLoadsProductsSuccessfully() async throws {
+    
+    func testLoadProductsLoadsProductsSuccessfully() async throws {
 
         // Arrange
         let repository = MockGetProductsUseCase()
-        let viewModel = ProductListViewModel(getProductsUseCase:  repository)
+        let viewModel =  HomeViewModel(getProductsUseCase:  repository)
 
         // Act
-        await viewModel.fetchProducts()
+        await viewModel.loadProducts()
 
         // Assert
         XCTAssertEqual(viewModel.products.count, 1)
         XCTAssertEqual(viewModel.products.first?.name, "Mock Apple")
     }
     
-  @MainActor
+  
     func testLoadingStateChanges() async {
             
         // Arrange
 
            let repository = DelayedMockGetProductsUseCase()
 
-           let viewModel = ProductListViewModel(getProductsUseCase:  repository)
+           let viewModel = HomeViewModel(getProductsUseCase:  repository)
         
         // Act
            let task = Task {
-                await viewModel.fetchProducts()
+                await viewModel.loadProducts()
             }
         try? await Task.sleep(for: .milliseconds(50))
         
@@ -51,20 +51,20 @@ final class ProductListViewModelTests: XCTestCase {
     }
     
     
-    @MainActor
-    func testFetchProductsSetsErrorWhenRepositoryThrows() async {
+    
+    func testLoadProductsSetsErrorWhenUseCaseThrows() async {
         
         //Arrange
         let repository = ThrowingMockGetProductsUseCase()
 
-        let viewModel = ProductListViewModel(getProductsUseCase:  repository)
+        let viewModel = HomeViewModel(getProductsUseCase:  repository)
         
         // Act
 
-        await viewModel.fetchProducts()
+        await viewModel.loadProducts()
         
         //Assert
-        XCTAssertNotNil(viewModel.error)
+        XCTAssertNotNil(viewModel.errorMessage)
         XCTAssertFalse(viewModel.isLoading)
         XCTAssertTrue(viewModel.products.isEmpty)
     }
